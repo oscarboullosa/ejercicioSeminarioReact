@@ -42,6 +42,7 @@ const Form = ({ onNewSub }: FromProps) => {
                 <input onChange={handleChange} value={inputValues.nick} type="text" name="nick" placeholder="username" />
                 <input onChange={handleChange} value={inputValues.subMonths} type="number" name="subMonths" placeholder="subMonths" />
                 <input onChange={handleChange} value={inputValues.avatar} type="text" name="avatar" placeholder="avatar URL" />
+                <input onChange={handleChange} value={inputValues.email} type="email" name="email" placeholder="email" />
                 <textarea onChange={handleChange} value={inputValues.description} name="description" placeholder="description" />
                 <input onChange={handleChange} value={inputValues.money} type="number" name="money" placeholder="money" />
                 <button onClick={handleClear} type="button">Clear the form</button>
@@ -54,5 +55,3 @@ const Form = ({ onNewSub }: FromProps) => {
 }
 
 export default Form
-
-

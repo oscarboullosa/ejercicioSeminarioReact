@@ -5,16 +5,12 @@ import List from './components/List';
 import Form from './components/Form';
 import { Sub } from './types';
 import Exercici from './components/Exercici';
-
-
+import Navbar from './components/Navbar';
 
 interface AppState{
   subs: Array<Sub>
   newSubsNumber: number
-
 }
-
-
 
 function App() {
   const [subs, setSubs] = useState<AppState["subs"]>([])
@@ -36,17 +32,18 @@ function App() {
   }
   
   return (
-    <div className="App" ref={divRef}>
-        <h1 className="header">Subscribers' list</h1>      
-      <List subs={subs}/>
-      New subs: {newSubsNumber}
-      <Form onNewSub={handleNewSub} />
-      {subs.map((sub) => (
-        <Exercici key={sub.nick} sub={sub} />
-      ))}
+    <div>
+      <Navbar />
+      <div className="App" ref={divRef}>
+          <h1 className="header">Subscribers' list</h1>      
+          <List subs={subs}/>
+          New subs: {newSubsNumber}
+          <Form onNewSub={handleNewSub} />
+          {subs.map((sub) => (
+            <Exercici key={sub.nick} sub={sub} />
+          ))}
+      </div>
     </div>
-    
-    
   );
 }
 
